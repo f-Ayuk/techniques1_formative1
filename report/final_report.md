@@ -6,6 +6,8 @@
 
 ---
 
+Repository: https://github.com/f-Ayuk/techniques1_formative1
+
 ## 1. Introduction
 
 Mobile network traffic forecasting supports proactive resource
@@ -483,4 +485,4 @@ prediction: A comparative analysis," in *Proc. Springer Conf.*, 2024.
 https://datavrse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EGZHFV
 
 [9] Source code and experiment log for this study:
-https://github.com/f-Ayuk/techniques1_formative1.git
+https://github.com/f-Ayuk/techniques1_formative1
