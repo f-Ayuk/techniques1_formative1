@@ -1,0 +1,6 @@
+,train_time_s,train_time_s,exec_time_s,exec_time_s
+,mean,std,mean,std
+model,,,,
+CNN,69.956,15.039,79.387,2.125
+LSTM,195.4,1.569,91.557,4.018
+SARIMA,0.077,0.014,45.9,4.399

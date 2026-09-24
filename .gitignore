@@ -1,0 +1,32 @@
+﻿# Raw data — never commit
+milan_data/
+
+# Parquet caches — regenerable
+cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs / temporary
+*.log
+*.tmp

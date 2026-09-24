@@ -1,0 +1,26 @@
+model,area,params,MAE,MAPE,RMSE,train_time_s,exec_time_s,stage,notes
+SARIMA,5161,"(1, 0, 1)",365.8747233339597,21.610189353438226,616.2585739279122,2938.4042959213257,,tuning,"baseline (1,0,1)(1,0,1,144)"
+SARIMA,5161,"{'order': (0, 1, 0), 'seasonal_order': (0, 0, 0, 144)}",1445.480700510054,60.85081360121616,2052.91210880437,0.09169816970825195,,final,"final config, val set"
+SARIMA,5059,"{'order': (0, 1, 0), 'seasonal_order': (0, 0, 0, 144)}",1239.1454244288261,60.013923812635575,1655.1845582612855,0.07631373405456543,,final,"final config, val set"
+SARIMA,5259,"{'order': (0, 1, 0), 'seasonal_order': (0, 0, 0, 144)}",1367.50667374144,74.79554860489415,1808.3817872979766,0.06403136253356934,,final,"final config, val set"
+LSTM,5161,"{'seq_len': 288, 'hidden_units': 64, 'n_layers': 1, 'dropout': 0.0, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.07791517674922943,19.799892152011967,0.11224962211361554,194.50022149085999,,tuning,baseline 1×64
+LSTM,5161,"{'seq_len': 288, 'hidden_units': 128, 'n_layers': 1, 'dropout': 0.2, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.08524166792631149,20.60274068302541,0.12592609636676944,409.4375321865082,,tuning,wider + dropout
+LSTM,5161,"{'seq_len': 288, 'hidden_units': 64, 'n_layers': 2, 'dropout': 0.2, 'learning_rate': 0.0005, 'batch_size': 64, 'epochs': 30, 'patience': 5}",0.08858736604452133,22.411497501171628,0.130121721230515,479.17152643203735,,tuning,"2-layer, lr=5e-4"
+LSTM,5161,"{'seq_len': 288, 'hidden_units': 64, 'n_layers': 1, 'dropout': 0.0, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.0757635235786438,19.5633858386245,0.11260942495203902,194.6602430343628,,final,"final config, val set"
+LSTM,5059,"{'seq_len': 288, 'hidden_units': 64, 'n_layers': 1, 'dropout': 0.0, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.0931934267282486,72.13982423166037,0.13319698246863224,194.3366675376892,,final,"final config, val set"
+LSTM,5259,"{'seq_len': 288, 'hidden_units': 64, 'n_layers': 1, 'dropout': 0.0, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.07211942970752716,32.67269503681358,0.10348958011682227,197.20179152488708,,final,"final config, val set"
+CNN,5161,"{'seq_len': 288, 'filters': 32, 'kernel_size': 3, 'n_blocks': 2, 'dilation_base': 2, 'dropout': 0.2, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.4706762135028839,62.920172233133165,0.5650443442421194,30.064759254455566,,tuning,"shallow (2 blocks, 32f)"
+CNN,5161,"{'seq_len': 288, 'filters': 64, 'kernel_size': 3, 'n_blocks': 3, 'dilation_base': 2, 'dropout': 0.2, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.19562283158302307,52.540096587981736,0.24091746744228204,66.17545461654663,,tuning,"wider (3 blocks, 64f)"
+CNN,5161,"{'seq_len': 288, 'filters': 64, 'kernel_size': 5, 'n_blocks': 3, 'dilation_base': 2, 'dropout': 0.2, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.14113986492156982,26.147142689500185,0.20393346407582577,79.91133570671082,,tuning,deeper kernel=5
+CNN,5161,"{'seq_len': 288, 'filters': 64, 'kernel_size': 5, 'n_blocks': 3, 'dilation_base': 2, 'dropout': 0.2, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.1423974484205246,29.02339422405228,0.19370834571933795,80.85034918785095,,final,"final config, val set"
+CNN,5059,"{'seq_len': 288, 'filters': 64, 'kernel_size': 5, 'n_blocks': 3, 'dilation_base': 2, 'dropout': 0.2, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.17374175786972046,1087.1477493355628,0.23748535374604693,52.79717659950256,,final,"final config, val set"
+CNN,5259,"{'seq_len': 288, 'filters': 64, 'kernel_size': 5, 'n_blocks': 3, 'dilation_base': 2, 'dropout': 0.2, 'learning_rate': 0.001, 'batch_size': 64, 'epochs': 20, 'patience': 5}",0.17162573337554932,68.2956590781606,0.2335937831712782,76.21933627128601,,final,"final config, val set"
+SARIMA,5161,final,91.23987190378884,9.161054945450227,131.3284261008708,0.09169816970825195,46.19021034240723,test,test-week walk-forward
+LSTM,5161,final,82.81518918277996,9.818863476149604,118.77903949422218,194.6602430343628,93.91592645645142,test,test-week walk-forward
+CNN,5161,final,233.85617985928343,39.21258122803272,295.70847130083985,80.85034918785095,78.26350498199463,test,test-week walk-forward
+SARIMA,5059,final,83.31357037318236,7.86962475660377,115.76125656455086,0.07631373405456543,41.3631546497345,test,test-week walk-forward
+LSTM,5059,final,72.23334364105109,7.430436839499725,101.47298687681936,194.3366675376892,86.91703224182129,test,test-week walk-forward
+CNN,5059,final,150.57638405589068,19.68235323205712,191.7321085298093,52.79717659950256,78.05886483192444,test,test-week walk-forward
+SARIMA,5259,final,83.63481526457505,8.550516232207542,125.33364921462217,0.06403136253356934,50.14648079872131,test,test-week walk-forward
+LSTM,5259,final,72.88344388332114,8.303779994859324,111.63216849549256,197.20179152488708,93.83709645271301,test,test-week walk-forward
+CNN,5259,final,321.491975763168,50.86330393880263,389.2627228500536,76.21933627128601,81.8373281955719,test,test-week walk-forward
